@@ -13,7 +13,7 @@ git:
   submodules: false
 
 install:
-  - chmod +x && binary/hugo
+  - chmod +x binary/hugo && binary/hugo
   
 script:
   # 部署
