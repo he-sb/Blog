@@ -1,2 +1,4 @@
 public
 hugo.exe
+.gitmodules
+themes/meme/.git
