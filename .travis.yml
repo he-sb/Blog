@@ -9,6 +9,9 @@ env:
    # Github Pages
    - GH_REF: github.com/he-sb/he-sb.github.io
 
+git:
+  submodules: false
+
 install:
   - resources/hugo
   
