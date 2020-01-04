@@ -13,7 +13,7 @@ git:
   submodules: false
 
 install:
-  - sudo resources/hugo
+  - binary/hugo
   
 script:
   # 部署
