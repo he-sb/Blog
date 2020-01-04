@@ -1,0 +1,24 @@
+# Specify which branches to build using a safelist
+# 分支白名单限制：只有 master 分支的提交才会触发构建
+# branches:
+#   only:
+#     - master
+
+env:
+ global:
+   # Github Pages
+   - GH_REF: github.com/he-sb/he-sb.github.io
+
+install:
+  - resources/hugo
+  
+script:
+  # 部署
+  - cd ./public
+  - git init
+  - git config user.name "he-sb"
+  - git config user.email "0he.sb0@gmail.com"
+  - git add .
+  - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  # Github Pages
+  - git push --force --quiet "https://$GITHUB_TOKEN@${GH_REF}" master:master
