@@ -9,13 +9,6 @@ env:
    # Github Pages
    - GH_REF: github.com/he-sb/he-sb.github.io
 
-git:
-  submodules: false
-  
-before_install:
-    - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-    - git submodule update --init --recursive
-
 install:
   - chmod +x binary/hugo && binary/hugo
   
