@@ -3,7 +3,7 @@
 # branches:
 #   only:
 #     - master
-sudo: required
+sudo: false
 
 env:
  global:

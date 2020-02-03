@@ -35,16 +35,10 @@ footnoteReturnLinkContents = "↩"
 enableGitInfo = false
 
 # 是否生成 robots.txt 文件
-enableRobotsTXT = true
+enableRobotsTXT = false
 
 # 每一分页的文章数（仅对「文章摘要」首页布局有效）
 paginate = 5
-
-# 代码高亮
-pygmentsCodefences = true
-pygmentsUseClasses = true
-pygmentsCodefencesGuessSyntax = true
-pygmentsOptions = "linenos=table"
 
 # URL 相关
 disablePathToLower = false
@@ -65,18 +59,37 @@ uglyURLs = false
 [frontmatter]
     lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
-# v0.60.0
-[markup]
-    defaultMarkdownHandler = "blackfriday"
 
-# Markdown 渲染器
-[blackfriday]
-    # 是否开启智能标点符号替换
-    smartypants = false
-    # 是否在新标签页打开外链
-    hrefTargetBlank = true
-    # 屏蔽的扩展
-    extensionsmask = ["hardLineBreak", "backslashLineBreak"]
+[markup]
+    defaultMarkdownHandler = "goldmark"
+    [markup.goldmark]
+        [markup.goldmark.extensions]
+            definitionList = true
+            footnote = true
+            linkify = true
+            strikethrough = true
+            table = true
+            taskList = true
+            typographer = false
+        [markup.goldmark.parser]
+            attribute = true
+            autoHeadingID = true
+            autoHeadingIDType = "github"
+        [markup.goldmark.renderer]
+            hardWraps = false
+            unsafe = true
+            xHTML = false
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = false
+        lineNos = true
+        lineNumbersInTable = true
+        noClasses = false
+    [markup.tableOfContents]
+        startLevel = 2
+        endLevel = 6
+        ordered = true
+		
 
 # 作者信息
 [author]
@@ -89,7 +102,7 @@ uglyURLs = false
     # 头像
     avatar = "/icons/apple-touch-icon.png"
     # 网站（默认值：baseURL）
-    website = ""
+    website = "https://he-sb.github.io"
     # 推特
     twitter = ""
 
@@ -398,7 +411,7 @@ uglyURLs = false
     # 说明：left（左边）或 right（右边）
 
     # 是否按月份分隔列表
-    groupByMonth = true
+    groupByMonth = false
 
     # 是否开启十二生肖
     chineseZodiac = false
@@ -535,6 +548,17 @@ uglyURLs = false
     enableKaTeX = false
     # 说明：文章的 Front Matter 中的 `katex`
     #      的优先级高于此处
+	
+	
+	 ######################################
+    # MathJax 公式支持（包括化学方程式）
+    # 是否开启（全局设置）
+    enableMathJax = false
+    # 说明：文章的 Front Matter 中的 `mathjax`
+    #      的优先级高于此处
+
+    # 是否禁用 MathJax 的右键菜单
+    disableMathJaxMenu = false
 
 
     ######################################
@@ -703,6 +727,16 @@ uglyURLs = false
     # 说明：仅在生产环境（production）下渲染
     #      首页暂不支持
     #      https://busuanzi.ibruce.info/
+	
+	
+	######################################
+    # Markdown 相关
+
+    # 在新标签页打开外链？
+    hrefTargetBlank = true
+
+    # 与 LaTeX 的兼容性？
+    compatibleWithLaTeX = false
 
 
     ######################################
@@ -855,6 +889,11 @@ uglyURLs = false
     ## 字号（单位：px）
 
     fontSize = 18
+	
+	######################################
+    ## 制表符的宽度
+
+    tabSize = 4
 
     ######################################
     ## 行间距
@@ -866,7 +905,12 @@ uglyURLs = false
     ## 段首缩排
 
     # 是否开启
-    enableParagraphIndent = true
+    enableParagraphIndent = false
+	
+	# 是否缩进第一段（全局设置）
+    indentFirstParagraph = false
+    # 说明：文章的 Front Matter 中的 `indentFirstParagraph`
+    #      的优先级高于此处
 
     # 分段样式（全局设置）
     paragraphStyle = "margin"
@@ -916,7 +960,7 @@ uglyURLs = false
     #      `..文本..`
 
     # 是否开启
-    enableEmphasisPoint = true
+    enableEmphasisPoint = false
 
     ######################################
     ## 中文标点符号字形纠正
