@@ -42,7 +42,7 @@ paginate = 5
 
 # URL 相关
 disablePathToLower = false
-relativeURLs = false
+relativeURLs = true
 uglyURLs = false
 
 # URL 结构
@@ -966,7 +966,7 @@ uglyURLs = false
     ## 中文标点符号字形纠正
 
     # 是否开启
-    enableChinesePunctuationGlyphCorrection = true
+    enableChinesePunctuationGlyphCorrection = false
 
 
     ######################################
