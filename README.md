@@ -2,6 +2,6 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/he-sb/Blog)
 ![](https://img.shields.io/badge/license-WTFPL-black.svg)
 
-### My blog: [https://he-sb.github.io](https://he-sb.github.io)
+### My blog: [https://he-sb.top](https://he-sb.top)
 
 ### Built by [Travis CI](https://travis-ci.org).
