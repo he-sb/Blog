@@ -528,7 +528,7 @@ uglyURLs = false
     ######################################
     # InstantClick
 
-    enableInstantClick = false
+    enableInstantClick = true
 
 
     ######################################
