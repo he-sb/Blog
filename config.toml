@@ -59,7 +59,7 @@ uglyURLs = false
 [frontmatter]
     lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
-
+# Markdown 渲染器
 [markup]
     defaultMarkdownHandler = "goldmark"
     [markup.goldmark]
@@ -94,7 +94,7 @@ uglyURLs = false
 # 作者信息
 [author]
     # 名字
-    name = "he-sb"
+    name = "HE-SB"
     # 邮箱
     email = ""
     # 座右铭或简介
