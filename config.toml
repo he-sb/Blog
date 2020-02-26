@@ -1170,7 +1170,7 @@ uglyURLs = false
     displaySiteCopyright = false
 
     # 自定义页脚（支持 Markdown）
-    customFooter = "Powered by [Hugo](https://gohugo.io/) | Theme by [MemE](https://github.com/reuixiy/hugo-theme-meme) | &copy; [WTFPL](https://he-sb.top/license.txt)"
+    customFooter = "Powered by [Hugo](https://gohugo.io/) | Theme is [MemE](https://github.com/reuixiy/hugo-theme-meme) | &copy; [WTFPL](https://he-sb.top/license.txt)"
 
 	displayBusuanziSiteUVAndPV = true
     busuanziSiteUVText = "本站访客数"
