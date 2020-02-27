@@ -598,10 +598,10 @@ uglyURLs = false
 	## Utterances
     enableUtterances = true
     utterancesRepo = "he-sb/blog-comments"
-    utterancesIssueTerm = "pathname"
+    utterancesIssueTerm = "title"
     utterancesTheme = "github-light"
     utterancesThemeDark = "photon-dark"
-    utterancesLabel = ""
+    utterancesLabel = "💬博客评论"
     # 说明：https://utteranc.es/
 
 
