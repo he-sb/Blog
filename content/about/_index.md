@@ -2,6 +2,7 @@
 title = "关于"
 comments = false
 meta = false
+share = false
 ---
 
 技术类文章欢迎移步至 [HE-SB-技术栈](https://tech.he-sb.top/) 查看。
