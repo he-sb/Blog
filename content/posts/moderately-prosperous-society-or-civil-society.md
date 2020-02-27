@@ -1,10 +1,10 @@
 +++
-title: "“小康社会”真的是我们想要的吗"
-description: " "
-date: 2019-12-25T12:41:47+08:00
-categories: [政治]
-tags: [小康社会,公民,民主]
-comments: true
+title = "“小康社会”真的是我们想要的吗"
+description = " "
+date = 2019-12-25T12:41:47+08:00
+categories = ["政治"]
+tags = ["小康社会","公民","民主"]
+comments = true
 +++
 一周之后，我们早上起床，一睁眼，不得了，突然就进入小康社会了！这可不是在说段子，因为按照我们党的“[庄严承诺](http://opinion.people.com.cn/big5/n1/2019/1215/c1003-31506421.html)”，到2020年，我们就要“全面建成小康社会”了。
 

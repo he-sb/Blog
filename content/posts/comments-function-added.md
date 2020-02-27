@@ -1,9 +1,9 @@
 +++
-title: "新增评论功能"
-description: " "
-date: 2019-12-19T23:04:52+08:00
-categories: [默认分类]
-tags: ["blog","评论"]
-comments: true
+title = "新增评论功能"
+description = " "
+date = "2019-12-19T23:04:52+08:00"
+categories = ["默认分类"]
+tags = ["blog","评论"]
+comments = true
 +++
 如题，各位现在应该可以在文章页面底部看到一个评论框了，由于使用了`utterances`作为本博客的评论系统，所以各位想要留言的话首先需要有一个[Github](https://github.com)账号（简单介绍一下Github：这是一个程序员~~交友~~交流网站，内容以代码为主，本博客就是托管在它上面的），登陆后即可畅所欲言，你的`Github`账号信息本博客不做存储，对此持怀疑态度的话可以**不使用评论功能**或**自行了解`utterances`工作原理**，这里就不浪费口舌了 :)
