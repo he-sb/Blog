@@ -205,7 +205,7 @@ uglyURLs = false
         post = "user-circle"
 	## 首页底部按钮
 	[[menu.home]]
-		url = "/posts"
+		url = "/posts/"
 		name = "文章"
 		weight = 1
 		pre = "internal"
@@ -223,7 +223,7 @@ uglyURLs = false
         pre = "internal"
         post = "tags"
 	[[menu.home]]
-		url = "/about"
+		url = "/about/"
 		name = "关于"
 		weight = 4
 		pre = "internal"
@@ -298,7 +298,7 @@ uglyURLs = false
     # 诗句，支持 Markdown
     homePoetry = ["*疯言疯语君莫笑*", "*且行且醉自逍遥*"]
     # 底部链接的内间距，单位：em
-    homeLinksPadding = 0.5
+    homeLinksPadding = 0.2
 
     ## 「视频片段」
     homePoster = ""
