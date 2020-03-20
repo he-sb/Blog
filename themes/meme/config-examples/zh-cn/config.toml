@@ -1,12 +1,12 @@
 ##########################################
 # 站点配置
 
-baseURL = "https://example.com/"
-title = "Hugo 主题 MemE"
+baseURL = "https://he-sb.top/"
+title = "疯言疯语"
 languageCode = "zh-CN"
 hasCJKLanguage = true
 # 版权信息（支持 Markdown）
-copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)"
+copyright = "&copy; [WTFPL](/license.txt)"
 
 # 主题选择
 theme = "meme"
@@ -15,7 +15,7 @@ theme = "meme"
 newContentEditor = ""
 
 # i18n
-defaultContentLanguage = "zh-cn"
+defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = false
 
 # 是否复数化列表页面的标题
@@ -41,7 +41,7 @@ paginate = 5
 
 # URL 相关
 disablePathToLower = false
-relativeURLs = false
+relativeURLs = true
 uglyURLs = false
 
 # URL 结构
@@ -92,17 +92,17 @@ uglyURLs = false
 # 作者信息
 [author]
     # 名字
-    name = "reuixiy"
+    name = "HE-SB"
     # 邮箱
-    email = "reuixiy@gmail.com"
+    email = "0he.sb0@gmail.com"
     # 座右铭或简介
-    motto = "Viva La Vida"
+    motto = "疯言疯语君莫笑，且行且醉自逍遥"
     # 头像
     avatar = "/icons/apple-touch-icon.png"
     # 网站（默认值：baseURL）
-    website = "https://io-oi.me/"
+    website = ""
     # 推特
-    twitter = "reuixiy"
+    twitter = ""
 
 # 相关文章
 [related]
@@ -155,7 +155,8 @@ uglyURLs = false
 # 菜单配置
 
 # MemE 主题支持以下四种菜单：
-# 1. main       顶栏下方的菜单栏
+# 1. main       顶栏下方（居中布局）或里面（弹性
+#               布局）的菜单栏
 # 2. home       首页的底部链接（适用于「诗意
 #               人生」和「视频片段」布局）
 # 3. socials    社交栏（关于页面的极简页脚）
@@ -167,16 +168,19 @@ uglyURLs = false
 # weight        位置
 # pre           内链（internal）或外链（external）
 # post          图标（留空（""）则无）
-# identifier    图标的 Class 名（菜单栏无效）
+# identifier    图标的 Class 名
+#               （对于弹性布局的顶栏有两个特殊
+#               的值：`theme-switcher`、
+#               `lang-switcher`）
 
 [menu]
     ## 菜单栏
-    [[menu.main]]
-        url = "/"
-        name = "首页"
-        weight = 1
-        pre = "internal"
-        post = "home"
+    # [[menu.main]]
+    #     url = "/"
+    #     name = "首页"
+    #     weight = 1
+    #     pre = "internal"
+    #     post = "home"
     [[menu.main]]
         url = "/posts/"
         name = "文章"
@@ -201,6 +205,12 @@ uglyURLs = false
         weight = 5
         pre = "internal"
         post = "user-circle"
+    [[menu.main]]
+        weight = 6
+        identifier = "theme-switcher"
+    # [[menu.main]]
+    #     weight = 7
+    #     identifier = "lang-switcher"
 
 
 
@@ -216,13 +226,36 @@ uglyURLs = false
 
     # 是否在首页显示
     displayHeaderInHome = true
+    # 说明：对弹性布局的顶栏无效
+
+    # 背景
+    headerBackground = "linear-gradient(90deg, #f795331a 0, #f370551a 15%, #ef4e7b1a 30%, #a166ab1a 44%, #5073b81a 58%, #1098ad1a 72%, #07b39b1a 86%, #6dba821a 100%)"
+    # 说明：https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
+
+    # 顶栏布局
+    headerLayout = "flex"
+    # 说明：居中布局（center）或弹性布局（flex）
+
+    # 顶栏宽度的回退值
+    headerFallbackWidth = "36em"
+    # 说明：默认情况，MemE 使用 main-inner 元素
+    #      的宽度作为顶栏宽度，但是在一些页面（比
+    #      如「诗意人生」和「视频片段」布局的首页），
+    #      不存在 main-inner 元素，所以你需要为
+    #      这种情况给一个回退值。
+
+    # 在窄视图下隐藏菜单栏并显示一个按钮？
+    enableNavToggle = true
+
+    navHeight = "10em"
+    # 说明：菜单栏展开时的高度
 
 
     ######################################
     # 品牌栏（在顶栏内）
 
     # 是否使用 SVG 图片
-    siteBrandSVG = true
+    siteBrandSVG = false
     # 如果是，请将你的 SVG 放到 `SVG.toml` 文
     # 件内，并配置以下项。单位：px。
     siteBrandSVGWidth = 250
@@ -231,14 +264,8 @@ uglyURLs = false
     # 如果否，则会使用你的站点标题作为默认值，并
     # 以文字的形式显示，下方可配置字号和字色。字
     # 体请到底部的字体部分配置。单位：em。
-    siteBrandFontSize = 5
-    siteBrandFontColor = "#fff"
-
-    # 背景色
-    # siteBrandBackgroundColor = "hsl(240, 8%, 12%)"
-    # 背景图片
-    siteBrandBackgroundImage = "linear-gradient(90deg, #f79533 0, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%)"
-    # 注意：背景色和背景图片只能二选一
+    siteBrandFontSize = 2
+    siteBrandFontColor = "var(--color-contrast-high)"
 
 
     ######################################
@@ -246,12 +273,14 @@ uglyURLs = false
 
     # 是否开启
     enableMenu = true
+    # 说明：对弹性布局的顶栏无效
 
     # 是否在首页显示
     displayMenuInHome = true
+    # 说明：对弹性布局的顶栏无效
 
     # 是否按文章分区高亮当前菜单项
-    activeInSection = false
+    activeInSection = true
     # 说明：如果开启，那么当某一文章的分区名是某
     #      一菜单项中的 `url` 时，该文章页面中
     #      的该菜单项也会被高亮
@@ -266,11 +295,11 @@ uglyURLs = false
     # 3. posts     文章摘要
     # 4. page      普通页面
 
-    homeLayout = "posts"
+    homeLayout = "poetry"
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
-    homePoetry = []
+    homePoetry = ["*疯言疯语君莫笑*", "*且行且醉自逍遥*"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
 
@@ -299,17 +328,12 @@ uglyURLs = false
     # 说明：用于 HTML 的头部元数据、JSON-LD、
     #      Open Graph、Atom、RSS
 
-    # 站点的关键词
-    siteKeywords = []
-    # 说明：如果留空（[]），则会取站点的所有类别名、分
-    #      区名（如果按分区分类）作为默认值
-
     # 站点的创建时间
-    siteCreatedTime = "1969-07-20T20:17:43+00:00"
+    siteCreatedTime = "2019-12-14T20:17:43+08:00"
     # 注意：请保持此格式，更改数字
 
     # 站点的推特帐号
-    siteTwitter = "reuixiy"
+    siteTwitter = ""
     # 说明：用于 Twitter Cards
 
 
@@ -371,7 +395,7 @@ uglyURLs = false
     # 列表页面
 
     # 宽度
-    listWidth = 36
+    listWidth = 42
     # 说明：如果留空（""），则用 42 作为默认值
     #      单位：em
 
@@ -379,7 +403,7 @@ uglyURLs = false
     displayListTitle = true
 
     # 日期的格式
-    listDateFormat = "1 月 2 日"
+    listDateFormat = "01-02"
     # 注意：请遵循格式 https://gohugo.io/functions/format/
 
     # 日期的位置
@@ -387,13 +411,13 @@ uglyURLs = false
     # 说明：left（左边）或 right（右边）
 
     # 是否按月份分隔列表
-    groupByMonth = true
+    groupByMonth = false
 
     # 是否开启十二生肖
-    chineseZodiac = true
+    chineseZodiac = false
 
     # 是否翻译年份（仅对年份标题有效）
-    i18nYear = true
+    i18nYear = false
     # 是否翻译月份（仅对月份标题有效）
     i18nMonth = true
 
@@ -502,12 +526,6 @@ uglyURLs = false
 
 
     ######################################
-    # InstantClick
-
-    enableInstantClick = true
-
-
-    ######################################
     # Service Worker
 
     # 说明：仅在生产环境（production）下渲染
@@ -539,12 +557,21 @@ uglyURLs = false
 
 
     ######################################
+    # Mermaid (https://github.com/mermaid-js/mermaid)
+
+    # 是否开启（全局设置）
+    enableMermaid = false
+    # 说明：文章的 Front Matter 中的 `mermaid`
+    #      的优先级高于此处
+
+
+    ######################################
     # 评论
 
     # 说明：仅在生产环境（production）下渲染
 
     # 是否开启（全局设置）
-    enableComments = false
+    enableComments = true
     # 说明：文章的 Front Matter 中的 `comments`
     #      的优先级高于此处
 
@@ -572,12 +599,12 @@ uglyURLs = false
     # 说明：https://valine.js.org/
 
     ## Utterances
-    enableUtterances = false
-    utterancesRepo = ""
-    utterancesIssueTerm = "pathname"
+    enableUtterances = true
+    utterancesRepo = "he-sb/blog-comments"
+    utterancesIssueTerm = "title"
     utterancesTheme = "github-light"
     utterancesThemeDark = "photon-dark"
-    utterancesLabel = ""
+    utterancesLabel = "💬博客评论"
     # 说明：https://utteranc.es/
 
 
@@ -586,19 +613,19 @@ uglyURLs = false
 
     # 说明：仅在生产环境（production）下渲染
 
-    enableGoogleAnalytics = false
+    enableGoogleAnalytics = true
 
     # 跟踪代码的类型
     trackingCodeType = "gtag"
     # 说明：gtag 或 analytics
 
-    trackingID = ""
+    trackingID = "UA-154589824-2"
 
 
     ######################################
     # Google Site Verification
 
-    googleSiteVerification = ""
+    googleSiteVerification = "IATMfE8Ezj4eycW-7BtKg7DRCmvEWP1D2f_lyh797bQ"
 
 
     ######################################
@@ -629,7 +656,7 @@ uglyURLs = false
     # 注意：只支持 HSL 颜色值
 
     # 文章的内容宽度
-    postWidth = 36
+    postWidth = 42
     # 说明：如果留空（""），则用 42 作为默认值
     #      单位：em
 
@@ -661,7 +688,7 @@ uglyURLs = false
     #      首页布局有效
 
     # 日期格式
-    postMetaDateFormat = "2006.1.2"
+    postMetaDateFormat = "2006.01.02"
     # 注意：请遵循格式 https://gohugo.io/functions/format/
 
     # 是否显示发布时间
@@ -675,7 +702,7 @@ uglyURLs = false
     modifiedDateIcon = "calendar-check"
 
     # 是否显示过期时间
-    displayExpiredDate = true
+    displayExpiredDate = false
     # 过期时间的图标
     expiredDateIcon = "calendar-times"
 
@@ -692,12 +719,12 @@ uglyURLs = false
     wordCountIcon = "pencil-alt"
 
     # 是否显示阅读时长
-    displayReadingTime = true
+    displayReadingTime = false
     # 阅读时长的图标
     readingTimeIcon = "clock"
 
     # 是否显示不蒜子页面浏览量
-    displayBusuanziPagePV = false
+    displayBusuanziPagePV = true
     # 不蒜子页面浏览量的图标
     busuanziPagePVIcon = "eye"
     # 说明：仅在生产环境（production）下渲染
@@ -711,20 +738,22 @@ uglyURLs = false
     # 在新标签页打开外链？
     hrefTargetBlank = true
 
-    # 与 LaTeX 的兼容性？
-    compatibleWithLaTeX = false
-
 
     ######################################
     # 文章目录
 
     # 是否开启（全局设置）
-    enableTOC = false
+    enableTOC = true
     # 说明：文章的 Front Matter 中的 `toc`
     #      的优先级高于此处
 
     # 是否显示目录标题
     displayTOCTitle = true
+
+    # 是否显示数字（全局设置）
+    displayTOCNum = false
+    # 说明：文章的 Front Matter 中的 `tocNum`
+    #      的优先级高于此处
 
     # 是否链接文章的分节标题到目录
     linkHeadingsToTOC = true
@@ -742,12 +771,12 @@ uglyURLs = false
     #      即 h1 到 h6。
 
     # 锚点符号
-    anchorSymbol = "#"
+    anchorSymbol = ""
     # 说明：锚点图标的优先级高于锚点符号
     #      默认值：§
 
     # 锚点图标
-    anchorIcon = "link"
+    anchorIcon = ""
     # 说明：留空（""）则回退到锚点符号
 
     # 是否开启锚点链接
@@ -816,7 +845,7 @@ uglyURLs = false
     #      `footnoteReturnLinkContents`
 
     # 是否自行插入分隔线
-    insertHrBySelf = true
+    insertHrBySelf = false
     # 说明：如果是，则会将自动生成的分隔线删除。
     #      实际上，你自己添加的分隔线会被删除。
     #      如果你喜欢在 Markdown 中手动插入
@@ -840,9 +869,9 @@ uglyURLs = false
     # 菜单栏
     fontFamilyMenu = ""
     # 文章标题、文章副标题、列表标题、列表的年份和月份标题、相关文章标题、文章上下篇标题、表格的表头、定义列表中的术语
-    fontFamilyTitle = "'Noto Serif SC', 'EB Garamond', serif"
+    fontFamilyTitle = "'Noto Serif SC', 'Amstelvar', serif"
     # 分节标题、目录标题
-    fontFamilyHeadings = "'Noto Serif SC', 'EB Garamond', serif"
+    fontFamilyHeadings = "'Noto Serif SC', 'Amstelvar', serif"
     # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览计数
     fontFamilyCode = "'Source Code Pro', 'Noto Serif SC', monospace"
     # 引用
@@ -854,10 +883,10 @@ uglyURLs = false
     # 页脚
     fontFamilyFooter = ""
     # 主体
-    fontFamilyBody = "'EB Garamond', 'Noto Serif SC', serif"
+    fontFamilyBody = "'Amstelvar', 'Noto Serif SC', serif"
 
     # 网络字体链接
-    fontsLink = "https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,700,700i|Noto+Serif+SC:400,500,700|Source+Code+Pro:400,400i,700,700i&display=swap&subset=chinese-simplified"
+    fontsLink = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@700&display=swap"
     # 说明：要想读者一定体验到你设置的字体，最好
     #      采用网络字体。MemE 主题目前仅支持
     #      Google Fonts 的链接，请前往
@@ -884,7 +913,7 @@ uglyURLs = false
     ## 段首缩排
 
     # 是否开启
-    enableParagraphIndent = true
+    enableParagraphIndent = false
 
     # 是否缩进第一段（全局设置）
     indentFirstParagraph = false
@@ -939,13 +968,13 @@ uglyURLs = false
     #      `..文本..`
 
     # 是否开启
-    enableEmphasisPoint = true
+    enableEmphasisPoint = false
 
     ######################################
     ## 中文标点符号字形纠正
 
     # 是否开启
-    enableChinesePunctuationGlyphCorrection = true
+    enableChinesePunctuationGlyphCorrection = false
 
 
     ######################################
@@ -955,7 +984,7 @@ uglyURLs = false
     enablePostCopyright = true
 
     # 是否显示（全局设置）
-    displayPostCopyright = true
+    displayPostCopyright = false
     # 说明：文章的 Front Matter 中的 `displayCopyright`
     #      的优先级高于此处
 
@@ -964,7 +993,7 @@ uglyURLs = false
     # 文章更新徽章
 
     # 是否开启
-    enablePostUpdatedBadge = true
+    enablePostUpdatedBadge = false
 
     # 是否显示（全局设置）
     displayUpdatedBadge = true
@@ -1029,16 +1058,16 @@ uglyURLs = false
     # 说明：文章的 Front Matter 中的 `share`
     #      的优先级高于此处
 
-    displayShareOnText = false
+    displayShareOnText = true
 
-    shareOnTwitter = true
-    shareOnFacebook = true
-    shareOnLinkedIn = true
+    shareOnTwitter = false
+    shareOnFacebook = false
+    shareOnLinkedIn = false
     shareOnTelegram = true
-    shareOnWeibo = true
-    shareOnDouban = true
+    shareOnWeibo = false
+    shareOnDouban = false
     shareOnQQ = true
-    shareOnQzone = true
+    shareOnQzone = false
 
     shareViaQRCode = true
 
@@ -1085,7 +1114,7 @@ uglyURLs = false
     enablePostNav = true
 
     # 是否仅限于相同的文章分区
-    postNavInSection = true
+    postNavInSection = false
 
 
     ######################################
@@ -1112,7 +1141,7 @@ uglyURLs = false
     enableBackToTopAutoHide = true
 
     # 是否在首页显示
-    displayBackToTopInHome = true
+    displayBackToTopInHome = false
 
     # 按钮图标
     backToTopIcon = "arrow-up"
@@ -1123,32 +1152,33 @@ uglyURLs = false
 
     # 是否开启
     enableFooter = true
-    # 说明：「诗意人生」和「视频片段」首页布局
-    #      的首页没有页脚
+
+    # 是否在首页显示
+    displayFooterInHome = true
 
     # 是否显示版权符号（©）
-    displayCopyrightSymbol = true
+    displayCopyrightSymbol = false
 
     # 是否显示站点的创建年份
     displaySiteCreatedYear = true
 
     # 年份与作者之间的图标，留空（""）则无
-    iconBetweenYearAndAuthor = "heart"
+    iconBetweenYearAndAuthor = "home"
     # 图标颜色
-    iconColor = "#f06292"
+    iconColor = "#000"
     # 是否开启图标的跳动效果
-    iconAnimation = true
+    iconAnimation = false
 
     # 是否显示 Hugo 和 MemE 的链接
-    displayPoweredBy = true
+    displayPoweredBy = false
 
     # 是否显示站点的版权信息
     displaySiteCopyright = true
 
     # 自定义页脚（支持 Markdown）
-    customFooter = ""
+    customFooter = "Powered by [Hugo](https://gohugo.io/) | Theme is [MemE](https://github.com/reuixiy/hugo-theme-meme) | &copy; [WTFPL](/license.txt)"
 
-    displayBusuanziSiteUVAndPV = false
+    displayBusuanziSiteUVAndPV = true
     busuanziSiteUVText = "本站访客数"
     busuanziSiteUVIcon = "user"
     busuanziSitePVText = "本站访问量"
@@ -1174,10 +1204,21 @@ uglyURLs = false
 
 
     ######################################
-    # 代码高亮
+    # 代码块
 
-    # 是否开启
+    # 是否开启高亮
     enableHighlight = true
+
+    # 是否开启竖直滚动
+    enableOverflowY = true
+    # 最大高度
+    maxHeight = 20
+    # 单位：em
+
+    # 是否开启复制
+    enableCopy = true
+    # 是否开启自动隐藏
+    enableCopyAutoHide = true
 
 
     ######################################
@@ -1204,7 +1245,7 @@ uglyURLs = false
     # 平滑滚动
 
     # 是否开启
-    enableSmoothScroll = true
+    enableSmoothScroll = false
     # 说明：https://github.com/cferdinandi/smooth-scroll
 
 
@@ -1213,6 +1254,13 @@ uglyURLs = false
 
     enableMediumZoom = true
     # 说明：https://github.com/francoischalifour/medium-zoom
+
+
+    ######################################
+    # Instant Page
+
+    enableInstantPage = true
+    # 说明：https://github.com/instantpage/instant.page
 
 
     ######################################
