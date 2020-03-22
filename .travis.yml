@@ -1,42 +1,37 @@
 os: linux
 dist: bionic
-language: go
+language: python  # python 环境启动比 Golang 耗时少，hugo 为编译好的二进制文件，语言环境不影响 hugo 执行
 
-go:
-  - "1.14"  # 指定Golang 1.14
+python:
+  - "3.7"  # 指定 Python 3.7
 
 git:
-  depth: 1  # 指定只 clone 最后一次 commit
-  quiet: true  # 不包含日志
+  depth: 1  # 只 clone 最后一次 commit ，加快速度
+  quiet: true
 
 env:
   global:
     # 设定 Github Pages 环境变量
-    - GH_REF: github.com/he-sb/he-sb.github.io
+    - GH_REF: github.com/he-sb/he-sb.github.io.git
 
 # 分支白名单限制：只有 master 分支的提交才会触发构建
 branches:
   only:
     - master
     
-before_install:
-  # 安装依赖
-  - sudo apt-get install libstdc++6
+install:  # 安装依赖
   # 安装 hugo （version: v0.66.0）
   - wget -q -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.66.0/hugo_extended_0.66.0_Linux-64bit.deb
   - sudo dpkg -i hugo.deb
 
-install:
-# 运行hugo命令
-  - hugo
-  
 script:
-  # 部署
+  - hugo  # 生成网站
+  
+after_script:  # 部署至 Github Pages
   - cd ./public
   - git init
   - git config user.name "he-sb"
   - git config user.email "0he.sb0@gmail.com"
   - git add .
   - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-  # Github Pages
   - git push --force --quiet "https://$GITHUB_TOKEN@${GH_REF}" master:master
