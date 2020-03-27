@@ -2,7 +2,7 @@
 title = "Hello World"
 description = " "
 date = "2019-12-15T17:52:24+08:00"
-categories = ["默认分类"]
+categories = ["博客相关"]
 tags = ["blog"]
 comments = true
 +++

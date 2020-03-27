@@ -2,7 +2,7 @@
 title = "新增评论功能"
 description = " "
 date = "2019-12-19T23:04:52+08:00"
-categories = ["默认分类"]
+categories = ["博客相关"]
 tags = ["blog","评论"]
 comments = true
 +++

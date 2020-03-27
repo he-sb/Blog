@@ -2,7 +2,7 @@
 title = "为什么悲观主义者更长寿"
 description = "*悲观但不绝望，乐观但不盲目。*"
 date = "2019-12-28T11:01:46+08:00"
-categories = ["哲·思"]
+categories = ["哲思"]
 tags = ["心理学","悲观主义","心态"]
 comments = true
 +++
