@@ -19,6 +19,11 @@ branches:
   only:
     - master
 
+before_install:
+  - git config --global core.quotePath false
+  - git config --global core.autocrlf false
+  - git config --global core.safecrlf true
+
 install:  # 安装依赖
   # 安装 hugo （version: v0.66.0）
   - wget -q -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.66.0/hugo_extended_0.66.0_Linux-64bit.deb
