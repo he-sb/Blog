@@ -29,7 +29,7 @@ jobs:
       # 拉取源码
       - name: Clone Repository
         run:
-          git clone --branch=master --quiet https://github.com/he-sb/Blog.git site
+          git clone --branch=master --quiet https://github.com/$SOURCE_REPO site
 
       # 安装 hugo (v0.79.0)
       - name: Setup Hugo
